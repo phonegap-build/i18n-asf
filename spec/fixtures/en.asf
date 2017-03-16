@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8" standalone="no" ?>
+<!DOCTYPE asf SYSTEM "http://ns.adobe.com/asf/asf_1_0.dtd">
+<asf version="1.0" locale="en-US" xmlns="http://ns.adobe.com/asf">
+  <str name="simple">
+    <desc>Example of a simple string definition</desc>
+    <val>Add to Kit</val>
+  </str>
+
+  <str name="with-html-entity">
+    <desc>String with HTML entity</desc>
+    <val>Adobe&reg; Photoshop&reg; Lightroom&trade;</val>
+  </str>
+
+  <str name="with-unicode">
+    <desc>String with Unicode characters</desc>
+    <val>Adobe® Photoshop® Lightroom™</val>
+  </str>
+
+  <str name="with-interpolation">
+    <desc>Translated string with param interpolation</desc>
+    <val>Invoice total: <param name="invoice_total" /></val>
+  </str>
+
+  <str name="with-dnt">
+    <desc>Translated string with portions that should not be translated</desc>
+    <val>Copyright <param name="year" /> <dnt>Typekit</dnt></val>
+  </str>
+
+  <str name="untranslated" translate="no">
+    <desc>Untranslated string; should still interpolate params and strip dnts</desc>
+    <val>Copyright &copy;<param name="year" /> <dnt>Typekit</dnt></val>
+  </str>
+
+  <str name="dnt-with-nested-param">
+    <desc>String with params nested inside dnt tag</desc>
+    <val>Hello! <dnt>Typekit is <param name="awesome" />!</dnt></val>
+  </str>
+
+  <str name="embedded-html">
+    <desc>String with embedded HTML; this should probably be avoided if at all possible but also supported if possible</desc>
+    <val>Your subscription is <b>Past Due since <param name="date" /></b></val>
+  </str>
+
+  <str name="encoded-html">
+    <desc>String with embedded HTML; this should probably be avoided if at all possible but also supported if possible</desc>
+    <val>Your subscription is &lt;b&gt;Past Due since <param name="date" />&lt;/b&gt;</val>
+  </str>
+
+  <!-- ASF language features we don't plan to use, but which the parser must support -->
+
+  <set name="backend">
+    <desc>Sample nested translation set</desc>
+    <str name="nested-string">
+      <desc>Example of a nested string</desc>
+      <val>I'm in the <dnt>backend</dnt></val>
+    </str>
+  </set>
+
+  <str name="propsets">
+    <desc>String with properties</desc>
+    <propset>
+      <prop>
+        <propkey>hello</propkey>
+        <propvalue>world</propvalue>
+      </prop>
+    </propset>
+    <val>Hello world!</val>
+  </str>
+
+  <str name="multi-value">
+    <desc>String with multiple values</desc>
+    <val>Hello world!</val>
+    <val accel="Cmd-Z" plat="mac">Goodnight Moon</val>
+    <val plat="mystery_meat">Salutations Brother</val>
+  </str>
+</asf>
